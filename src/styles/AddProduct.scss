@@ -1,0 +1,39 @@
+.add-product {
+    display: flex;
+    gap: 2rem;
+    height: 30rem;
+}
+
+.add-product__form {
+    flex: 2 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem
+}
+
+.add-product__form-label {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.add-product__form-input {
+    font-size: 1.3rem;
+}
+
+.add-product__card {
+    flex: 1 30%;
+}
+
+.add-product__form-div {
+    margin: 0.5rem;
+}
+
+.add-product__form-button {
+    grid-column: 1 / 3;
+    font-size: 1.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

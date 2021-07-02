@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Router from "./Router";
-import ProductGrid from "./ProductGrid";
+import Admin from "./Admin";
 
 import {data} from "./data";
+import AddProduct from "./AddProduct";
 
 const Main = function() {
 
@@ -11,21 +12,21 @@ const Main = function() {
     return (
         <Router 
         routeCompList={[
-          {
-            route: "/home",
-            Component: null,
-            props: {}
-          },
-          {
-            route: "/admin",
-            Component: ProductGrid,
-            props: {productList}
-          },
-          {
-            route: "/user",
-            Component: null,
-            props: {productList}
-          }
+            {
+                route: "/home",
+                Component: AddProduct,
+                props: {}
+            },
+            {
+                route: "/admin",
+                Component: Admin,
+                props: {productList}
+            },
+            {
+                route: "/user",
+                Component: null,
+                props: {productList}
+            }
         ]}
       />
     );
