@@ -10,9 +10,17 @@ const AddProduct = function() {
     const [imagePath, setImagePath] = useState("");
     const [description, setDescription] = useState("");
 
+    const toggleHandler = () => {
+
+    };
+
+    const submitHandler = () => {
+
+    };
+
     return (
         <div class="add-product">
-            <form className="add-product__form">
+            <form className="add-product__form" onSubmit={submitHandler}>
                 <label className="add-product__form-label" for="name">Name: </label>
                 <input 
                     className="add-product__form-input"
@@ -55,6 +63,9 @@ const AddProduct = function() {
                     description={description} imagePath={imagePath} 
                 />
             </div>
+            <button onClick={toggleHandler}>
+                <span class="fa fa-2x fa-chevron-left"></span>
+            </button>
         </div>
     );
 };
