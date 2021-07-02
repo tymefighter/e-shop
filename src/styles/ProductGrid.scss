@@ -1,13 +1,19 @@
 .product-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 40rem;
-    padding: 0 5%;
+    grid-auto-rows: 45rem;
+    gap: 2rem;
+    padding: 2rem 5%;
 }
 
-@media screen and (min-width: 500rem) {
+@media screen and (min-width: 50rem) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 20rem;
+    }
+}
+
+@media screen and (min-width: 82rem) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
