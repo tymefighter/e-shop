@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    border-top: 0.2rem solid black;
+}
+
+.footer__item-header {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+.footer__item-list {
+    font-size: 1.3rem;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__item-list--social {
+    display: flex;
+    gap: 0.3rem;
+}
