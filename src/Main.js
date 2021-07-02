@@ -14,12 +14,17 @@ const Main = function() {
         routeCompList={[
             {
                 route: "/home",
-                Component: AddProduct,
+                Component: null,
                 props: {}
             },
             {
                 route: "/admin",
                 Component: Admin,
+                props: {productList}
+            },
+            {
+                route: "/admin/add-product",
+                Component: AddProduct,
                 props: {productList}
             },
             {

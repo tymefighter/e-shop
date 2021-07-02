@@ -10,10 +10,6 @@ const AddProduct = function() {
     const [imagePath, setImagePath] = useState("");
     const [description, setDescription] = useState("");
 
-    const toggleHandler = () => {
-
-    };
-
     const submitHandler = () => {
 
     };
@@ -63,9 +59,9 @@ const AddProduct = function() {
                     description={description} imagePath={imagePath} 
                 />
             </div>
-            <button onClick={toggleHandler}>
+            <a className="add-product__back-button" href="/admin">
                 <span class="fa fa-2x fa-chevron-left"></span>
-            </button>
+            </a>
         </div>
     );
 };
