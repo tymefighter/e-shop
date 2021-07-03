@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Router = function({routeCompList}) {
-    const [path, setPath] = useState("/");
+const Router = function({routeCompList, routeName}) {
 
-    useEffect(() => {
-        const url = window.location.href;
-        const regex = /^http:\/\/localhost:3000(.*)/;
-        setPath(url.match(regex)[1]);
-    }, []);
-
-    for(const {route, Component, props} of routeCompList)
-        if(route === path) 
-            return <Component {...props} />;
+    for(const routeComp of routeCompList)
+        if(routeName === routeComp.routeName) 
+            return <routeComp.Component {...routeComp.props} />;
     
     return null;
 }

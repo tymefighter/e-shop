@@ -12,8 +12,14 @@
     text-align: center;
     flex-grow: 1;
     font-size: 2rem;
+    background: white;
+    border: none;
 
     &:active {
         background-color: rgb(194, 194, 194);
+    }
+
+    &:hover {
+        cursor: pointer;
     }
 }

@@ -3,12 +3,14 @@ import Router from "./Router";
 import Admin from "./Admin";
 import AddProduct from "./AddProduct";
 import UserPage from "./UserPage";
+import Nav from "./Nav";
 
 import {data} from "./data";
 
 const Main = function() {
 
     const [productList, setProductList] = useState(data);
+    const [routeName, setRouteName] = useState("admin");
 
     const getMex = function(idList) {
         const idSet = new Set();
@@ -32,31 +34,37 @@ const Main = function() {
         });
     };
 
+    console.log(routeName);
+
     return (
-        <Router 
-        routeCompList={[
-            {
-                route: "/home",
-                Component: null,
-                props: {}
-            },
-            {
-                route: "/admin",
-                Component: Admin,
-                props: {productList}
-            },
-            {
-                route: "/admin/add-product",
-                Component: AddProduct,
-                props: {addProduct}
-            },
-            {
-                route: "/user",
-                Component: UserPage,
-                props: {productList}
-            }
-        ]}
-      />
+        <>
+            <Nav setRouteName={setRouteName} />
+            <Router 
+            routeCompList={[
+                {
+                    routeName: "home",
+                    Component: null,
+                    props: {}
+                },
+                {
+                    routeName: "admin",
+                    Component: Admin,
+                    props: {productList, setRouteName}
+                },
+                {
+                    routeName: "user",
+                    Component: UserPage,
+                    props: {productList}
+                },
+                {
+                    routeName: "add-product",
+                    Component: AddProduct,
+                    props: {addProduct, setRouteName}
+                }
+            ]}
+            routeName={routeName}
+        />
+      </>
     );
 }
 
