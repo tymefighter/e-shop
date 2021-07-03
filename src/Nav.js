@@ -2,12 +2,24 @@ import React from "react";
 
 import './styles/Nav.scss';
 
-const Nav = function() {
+const Nav = function({setRouteName}) {
     return (
         <nav className="nav">
-            <a className="nav__item" href="/home">e-shop</a>
-            <a className="nav__item" href="/admin">Admin</a>
-            <a className="nav__item" href="/user">User</a>
+            <button 
+                className="nav__item" 
+                onClick={() => setRouteName("home")}>
+                e-shop
+            </button>
+            <button 
+                className="nav__item" 
+                onClick={() => setRouteName("admin")}>
+                Admin
+            </button>
+            <button 
+                className="nav__item" 
+                onClick={() => setRouteName("user")}>
+                User
+            </button>
         </nav>
     );
 }

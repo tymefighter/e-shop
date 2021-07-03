@@ -3,12 +3,15 @@ import ProductGrid from "./ProductGrid";
 
 import "./styles/Admin.scss";
 
-const Admin = function({productList}) {
+const Admin = function({productList, setRouteName}) {
     return (
         <div>
-            <a className="admin-open-button" href="/admin/add-product">
+            <button 
+                className="admin-open-button"
+                onClick={() => setRouteName("add-product")}
+            >
                 <span class="fa fa-2x fa-chevron-right"></span>
-            </a>
+            </button>
             <ProductGrid productList={productList} />
         </div>
     );

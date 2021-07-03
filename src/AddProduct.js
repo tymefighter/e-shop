@@ -3,7 +3,7 @@ import Card from "./Card";
 
 import "./styles/AddProduct.scss";
 
-const AddProduct = function({addProduct}) {
+const AddProduct = function({addProduct, setRouteName}) {
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
@@ -13,6 +13,7 @@ const AddProduct = function({addProduct}) {
     const submitHandler = (event) => {
         event.preventDefault();
         addProduct({name, price, imagePath, description});
+        setRouteName("admin");
     };
 
     return (
@@ -60,9 +61,12 @@ const AddProduct = function({addProduct}) {
                     description={description} imagePath={imagePath} 
                 />
             </div>
-            <a className="add-product__back-button" href="/admin">
+            <button 
+                className="add-product__back-button"
+                onClick={() => setRouteName("admin")}
+            >
                 <span class="fa fa-2x fa-chevron-left"></span>
-            </a>
+            </button>
         </div>
     );
 };

@@ -43,4 +43,10 @@
     height: fit-content;
     align-self: center;
     color: grey;
+    background-color: white;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
