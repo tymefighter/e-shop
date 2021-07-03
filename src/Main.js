@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Router from "./Router";
 import Admin from "./Admin";
 import AddProduct from "./AddProduct";
+import HomePage from "./HomePage";
 import UserPage from "./UserPage";
 import Nav from "./Nav";
 
@@ -43,7 +44,7 @@ const Main = function() {
             routeCompList={[
                 {
                     routeName: "home",
-                    Component: null,
+                    Component: HomePage,
                     props: {}
                 },
                 {
