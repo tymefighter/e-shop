@@ -12,9 +12,9 @@ const Main = function() {
     const [productList, setProductList] = useState(data);
     const [routeName, setRouteName] = useState("admin");
 
-    const getMex = function(idList) {
+    const getMex = function(objList) {
         const idSet = new Set();
-        idList.forEach(id => idSet.add(id));
+        objList.forEach(obj => idSet.add(obj.id));
 
         let mex = idSet.size;
         for(let i = 0;i < idSet.size;i++) {
