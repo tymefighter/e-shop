@@ -3,15 +3,16 @@ import Card from "./Card";
 
 import "./styles/AddProduct.scss";
 
-const AddProduct = function() {
+const AddProduct = function({addProduct}) {
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [imagePath, setImagePath] = useState("");
     const [description, setDescription] = useState("");
 
-    const submitHandler = () => {
-
+    const submitHandler = (event) => {
+        event.preventDefault();
+        addProduct({name, price, imagePath, description});
     };
 
     return (
