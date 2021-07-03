@@ -1,0 +1,16 @@
+.search-bar {
+    height: 5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.search-bar__icon {
+    color: grey;
+}
+
+.search-bar__input {
+    padding: 0.4rem 1rem;
+    font-size: 3rem;
+}

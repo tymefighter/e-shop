@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Router from "./Router";
 import Admin from "./Admin";
+import AddProduct from "./AddProduct";
+import UserPage from "./UserPage";
 
 import {data} from "./data";
-import AddProduct from "./AddProduct";
 
 const Main = function() {
 
@@ -29,7 +30,7 @@ const Main = function() {
             },
             {
                 route: "/user",
-                Component: null,
+                Component: UserPage,
                 props: {productList}
             }
         ]}
