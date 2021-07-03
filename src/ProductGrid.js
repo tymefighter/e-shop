@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "./Card";
 
+import "./styles/ProductGrid.scss";
+
 const ProductGrid = function({productList}) {
 
     const renderProductList = productList.map((product) => {

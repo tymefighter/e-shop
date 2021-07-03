@@ -9,10 +9,10 @@ const Router = function({routeCompList}) {
         setPath(url.match(regex)[1]);
     }, []);
 
-    routeCompList.forEach(({route, Component, props}) => {
-        if(route === path) return <Component {...props} />;
-    });
-
+    for(const {route, Component, props} of routeCompList)
+        if(route === path) 
+            return <Component {...props} />;
+    
     return null;
 }
 
