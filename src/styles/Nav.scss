@@ -3,6 +3,7 @@
     flex-direction: row;
     border-bottom: 0.2rem solid black;
     margin-bottom: 2rem;
+    padding-bottom: 0.4rem;
 }
 
 .nav__item {
@@ -11,4 +12,8 @@
     text-align: center;
     flex-grow: 1;
     font-size: 2rem;
+
+    &:active {
+        background-color: rgb(194, 194, 194);
+    }
 }
