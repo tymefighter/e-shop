@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Card from "./Card";
 
+import { DEFAULT_PRODUCT_IMAGE } from "./constants";
+
 import "./styles/AddProduct.scss";
 
 const AddProduct = function({addProduct, setRouteName}) {
 
     const [name, setName] = useState("");
-    const [price, setPrice] = useState(0);
-    const [imagePath, setImagePath] = useState("");
+    const [price, setPrice] = useState("");
+    const [imagePath, setImagePath] = useState(DEFAULT_PRODUCT_IMAGE);
     const [description, setDescription] = useState("");
 
     const submitHandler = (event) => {

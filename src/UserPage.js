@@ -4,7 +4,7 @@ import ProductGrid from "./ProductGrid";
 
 const UserPage = function({productList}) {
     const [searchQuery, setSearchQuery] = useState("");
-    const [priceOrder, setPriceOrder] = useState("");
+    const [priceOrder, setPriceOrder] = useState("increase");
 
     const filteredProductList = productList.filter(({name, description}) => {
         return name.toLowerCase().includes(searchQuery)
