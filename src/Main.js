@@ -11,7 +11,7 @@ import {data} from "./data";
 const Main = function() {
 
     const [productList, setProductList] = useState(data);
-    const [routeName, setRouteName] = useState("admin");
+    const [routeName, setRouteName] = useState("home");
 
     const getMex = function(objList) {
         const idSet = new Set();
