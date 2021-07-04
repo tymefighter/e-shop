@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Router from "./Router";
 import Admin from "./Admin";
 import AddProduct from "./AddProduct";
+import HomePage from "./HomePage";
 import UserPage from "./UserPage";
 import Nav from "./Nav";
 
@@ -10,7 +11,7 @@ import {data} from "./data";
 const Main = function() {
 
     const [productList, setProductList] = useState(data);
-    const [routeName, setRouteName] = useState("admin");
+    const [routeName, setRouteName] = useState("home");
 
     const getMex = function(objList) {
         const idSet = new Set();
@@ -43,7 +44,7 @@ const Main = function() {
             routeCompList={[
                 {
                     routeName: "home",
-                    Component: null,
+                    Component: HomePage,
                     props: {}
                 },
                 {
