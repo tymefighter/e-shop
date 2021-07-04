@@ -10,7 +10,7 @@ const Admin = function({productList, setRouteName}) {
                 className="admin-open-button"
                 onClick={() => setRouteName("add-product")}
             >
-                <span class="fa fa-2x fa-chevron-right"></span>
+                <span className="fa fa-2x fa-chevron-right"></span>
             </button>
             <ProductGrid productList={productList} />
         </div>
