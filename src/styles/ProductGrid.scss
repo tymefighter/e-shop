@@ -6,6 +6,12 @@
     padding: 2rem 5%;
 }
 
+.product-grid__card {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 @media screen and (min-width: 50rem) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);

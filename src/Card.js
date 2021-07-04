@@ -1,9 +1,12 @@
 import React from "react";
 import "./styles/Card.scss";
 
-const Card = function({name, price, description, imagePath}) {
+const Card = function({name, price, description, imagePath, className, ...props}) {
+
+    const cardClassName = "card" + (className ? " " + className : "");
+
     return (
-        <div className="card">
+        <div className={cardClassName} {...props}>
             <img src={imagePath} alt={name} className="card__img" />
             <div className="card__text">
                 <h1 className="card__name">{name}</h1>
@@ -12,6 +15,6 @@ const Card = function({name, price, description, imagePath}) {
             </div>
         </div>
     );
-}
+};
 
 export default Card;

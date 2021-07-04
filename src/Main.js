@@ -35,8 +35,6 @@ const Main = function() {
         });
     };
 
-    console.log(routeName);
-
     return (
         <>
             <Nav setRouteName={setRouteName} />
