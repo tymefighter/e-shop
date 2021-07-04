@@ -35,6 +35,12 @@ const Main = function() {
         });
     };
 
+    const deleteProduct = function(productId) {
+        setProductList((prevProductList) => {
+            return prevProductList.filter((id) => id !== productId);
+        });
+    };
+
     return (
         <>
             <Nav setRouteName={setRouteName} />
@@ -48,7 +54,7 @@ const Main = function() {
                 {
                     routeName: "admin",
                     Component: Admin,
-                    props: {productList, setRouteName}
+                    props: {productList, deleteProduct, setRouteName}
                 },
                 {
                     routeName: "user",
@@ -65,6 +71,6 @@ const Main = function() {
         />
       </>
     );
-}
+};
 
 export default Main;

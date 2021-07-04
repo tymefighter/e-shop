@@ -8,7 +8,7 @@ const modalHOC = function(InnerComponent) {
         return (
             <div className="modal" onClick={() => closeModal()}>
                 <InnerComponent 
-                    className="modal__inner" {...props} 
+                    className="modal__inner" {...props} closeModal={closeModal}
                     onClick={(event) => event.stopPropagation()}
                 />
             </div>

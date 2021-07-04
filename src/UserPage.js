@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
-import ProductGrid from "./ProductGrid";
+import UserProductGrid from "./UserProductGrid";
 
 const UserPage = function({productList}) {
     const [searchQuery, setSearchQuery] = useState("");
@@ -24,7 +24,7 @@ const UserPage = function({productList}) {
                 searchQuery={searchQuery} setSearchQuery={setSearchQuery} 
                 priceOrder={priceOrder} setPriceOrder={setPriceOrder}
             />
-            <ProductGrid 
+            <UserProductGrid 
                 productList={filteredProductList} 
             />
         </div>
