@@ -1,9 +1,9 @@
 import React from "react";
-import ProductGrid from "./ProductGrid";
+import AdminProductGrid from "./AdminProductGrid";
 
 import "./styles/Admin.scss";
 
-const Admin = function({productList, setRouteName}) {
+const Admin = function({productList, deleteProduct, setRouteName}) {
     return (
         <div>
             <button 
@@ -12,7 +12,7 @@ const Admin = function({productList, setRouteName}) {
             >
                 <span className="fa fa-2x fa-chevron-right"></span>
             </button>
-            <ProductGrid productList={productList} />
+            <AdminProductGrid productList={productList} deleteProduct={deleteProduct} />
         </div>
     );
 }
