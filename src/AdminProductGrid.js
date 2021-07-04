@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Card from "./Card";
-import UserSelectModal from "./UserSelectModal";
+import AdminSelectModal from "./AdminSelectModal";
 
 import "./styles/ProductGrid.scss";
 
-const ProductGrid = function({productList}) {
+const AdminProductGrid = function({productList, deleteProduct}) {
 
     const [modalInfo, setModalInfo] = useState({show: false});
 
@@ -13,7 +13,7 @@ const ProductGrid = function({productList}) {
         return (
             <Card
                 key={product.id} {...props} className="product-grid__card"
-                onClick={() => setModalInfo({...props, show: true})}
+                onClick={() => setModalInfo({id, ...props, show: true})}
             />
         );
     });
@@ -23,7 +23,7 @@ const ProductGrid = function({productList}) {
         setModalInfo((prevModalInfo) => ({...prevModalInfo, show: false}));
     }
     const modal = show ? 
-        <UserSelectModal {...modalProps} closeModal={closeModal} /> 
+        <AdminSelectModal {...modalProps} closeModal={closeModal} deleteProduct={deleteProduct} /> 
         : null;
 
     return (
@@ -34,4 +34,4 @@ const ProductGrid = function({productList}) {
     );
 };
 
-export default ProductGrid;
+export default AdminProductGrid;
