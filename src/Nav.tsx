@@ -2,7 +2,11 @@ import React from "react";
 
 import './styles/Nav.scss';
 
-const Nav = function({setRouteName}) {
+export interface NavType {
+    setRouteName: (routeName: string) => void;
+};
+
+const Nav = function({setRouteName}: NavType) {
     return (
         <nav className="nav">
             <button 
