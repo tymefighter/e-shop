@@ -6,7 +6,9 @@
         "strictNullChecks": true,
         "strictFunctionTypes": true,
         "strictBindCallApply": true,
-        "lib": ["DOM", "ES2016"]
+        "lib": ["DOM", "ES2016"],
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react-jsx"
     },
     "include": ["**/*"],
     "exclude": []
