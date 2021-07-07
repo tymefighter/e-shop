@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "ES6",
+        "noImplicitAny": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "lib": ["DOM", "ES2016"]
+    },
+    "include": ["**/*"],
+    "exclude": []
+}
