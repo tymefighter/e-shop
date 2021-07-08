@@ -1,4 +1,4 @@
-export const DEFAULT_PRODUCT_IMAGE = require("./assets/images/default-product-image.jpeg");
+export const DEFAULT_PRODUCT_IMAGE = require("./assets/images/default-product-image.jpeg").default;
 
 export const HOME_PARA_ARR = [
     "Welcome to E-Shop",
