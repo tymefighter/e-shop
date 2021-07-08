@@ -1,8 +1,8 @@
-import shirtUrl from "./assets/images/shirt.jpeg";
-import tShirtUrl from "./assets/images/t-shirt.jpeg";
-import vaderSocksUrl from "./assets/images/vader-socks.jpeg";
-import eyeOfAgamottoUrl from "./assets/images/eye-of-agamotto.jpeg";
-import lightSaberUrl from "./assets/images/lightsaber.jpg";
+const shirtUrl = require("./assets/images/shirt.jpeg");
+const tShirtUrl = require("./assets/images/t-shirt.jpeg");
+const vaderSocksUrl = require("./assets/images/vader-socks.jpeg");
+const eyeOfAgamottoUrl = require("./assets/images/eye-of-agamotto.jpeg");
+const lightSaberUrl = require("./assets/images/lightsaber.jpg");
 
 export const data = [
     {

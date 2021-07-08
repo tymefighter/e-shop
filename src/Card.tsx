@@ -5,7 +5,7 @@ export interface CardType {
     [key: string]: any;
 
     name: string;
-    price: number;
+    price: string;
     description: string;
     imagePath: string;
     className?: string;

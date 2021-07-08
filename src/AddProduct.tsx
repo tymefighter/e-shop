@@ -5,23 +5,33 @@ import { DEFAULT_PRODUCT_IMAGE } from "./constants";
 
 import "./styles/AddProduct.scss";
 
-const AddProduct = function({addProduct, setRouteName}) {
+export interface AddProductPropsType {
+    addProduct: (productInfo: {
+        name: string;
+        price: string;
+        imagePath: string;
+        description: string;
+    }) => void;
+    setRouteName: (routeName: string) => void;
+};
+
+const AddProduct = function({addProduct, setRouteName}: AddProductPropsType) {
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [imagePath, setImagePath] = useState(DEFAULT_PRODUCT_IMAGE);
     const [description, setDescription] = useState("");
 
-    const submitHandler = (event) => {
+    const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         addProduct({name, price, imagePath, description});
         setRouteName("admin");
     };
 
     return (
-        <div class="add-product">
+        <div className="add-product">
             <form className="add-product__form" onSubmit={submitHandler}>
-                <label className="add-product__form-label" for="name">Name: </label>
+                <label className="add-product__form-label">Name: </label>
                 <input 
                     className="add-product__form-input"
                     type="text" name="name" 
@@ -32,7 +42,7 @@ const AddProduct = function({addProduct, setRouteName}) {
                 <input 
                     className="add-product__form-input"
                     type="number" name="price" 
-                    onChange={(event) => setPrice(parseInt(event.target.value))}
+                    onChange={(event) => setPrice(event.target.value)}
                     value={price}
                 />
 
@@ -42,6 +52,8 @@ const AddProduct = function({addProduct, setRouteName}) {
                     type="file" 
                     name="imageFile" 
                     onChange={(event) => {
+                        if(!event.target.files) return;
+
                         const file = event.target.files[0];
                         setImagePath(URL.createObjectURL(file));
                     }}
@@ -50,7 +62,7 @@ const AddProduct = function({addProduct, setRouteName}) {
                 <label className="add-product__form-label">Description: </label>
                 <textarea 
                     className="add-product__form-input"
-                    name="description" rows="4" 
+                    name="description" rows={4}
                     onChange={(event) => setDescription(event.target.value)}
                     value={description}
                 />
@@ -67,7 +79,7 @@ const AddProduct = function({addProduct, setRouteName}) {
                 className="add-product__back-button"
                 onClick={() => setRouteName("admin")}
             >
-                <span class="fa fa-2x fa-chevron-left"></span>
+                <span className="fa fa-2x fa-chevron-left"></span>
             </button>
         </div>
     );
