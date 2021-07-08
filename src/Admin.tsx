@@ -3,7 +3,19 @@ import AdminProductGrid from "./AdminProductGrid";
 
 import "./styles/Admin.scss";
 
-const Admin = function({productList, deleteProduct, setRouteName}) {
+export interface AdminPropsType {
+    productList: {
+        name: string;
+        price: string;
+        description: string;
+        imagePath: string;
+        id: string;
+    }[];
+    deleteProduct: (id: string) => void;
+    setRouteName: (routeName: string) => void;
+};
+
+const Admin = function({productList, deleteProduct, setRouteName}: AdminPropsType) {
     return (
         <div>
             <button 

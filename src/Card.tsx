@@ -1,7 +1,17 @@
 import React from "react";
 import "./styles/Card.scss";
 
-const Card = function({name, price, description, imagePath, className, ...props}) {
+export interface CardType {
+    [key: string]: any;
+
+    name: string;
+    price: string;
+    description: string;
+    imagePath: string;
+    className?: string;
+};
+
+const Card = function({name, price, description, imagePath, className, ...props}: CardType) {
 
     const cardClassName = "card" + (className ? " " + className : "");
 

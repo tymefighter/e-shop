@@ -1,10 +1,20 @@
 import React, { useState } from "react";
-import SearchBar from "./SearchBar";
+import SearchBar, { PriceOrder } from "./SearchBar";
 import UserProductGrid from "./UserProductGrid";
 
-const UserPage = function({productList}) {
+export interface UserPagePropsType {
+    productList: {
+        name: string;
+        price: string;
+        description: string;
+        imagePath: string;
+        id: string;
+    }[];
+};
+
+const UserPage = function({productList}: UserPagePropsType) {
     const [searchQuery, setSearchQuery] = useState("");
-    const [priceOrder, setPriceOrder] = useState("increase");
+    const [priceOrder, setPriceOrder] = useState<PriceOrder>("increase");
 
     const filteredProductList = productList.filter(({name, description}) => {
         return name.toLowerCase().includes(searchQuery)
@@ -12,10 +22,13 @@ const UserPage = function({productList}) {
     });
 
     filteredProductList.sort((prodA, prodB) => {
-        if(prodA.price === prodB.price) return 0;
+        const priceA = parseInt(prodA.price);
+        const priceB = parseInt(prodB.price);
 
-        if(priceOrder === "increase") return prodA.price < prodB.price ? -1 : 1;
-        else return prodA.price < prodB.price ? 1 : -1;
+        if(priceA === priceB) return 0;
+
+        if(priceOrder === "increase") return priceA < priceB ? -1 : 1;
+        else return priceA < priceB ? 1 : -1;
     });
 
     return (
