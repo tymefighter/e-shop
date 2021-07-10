@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Router from "./Router";
 import Admin from "./Admin";
-import AddProduct from "./AddProduct";
+import ProductForm from "./ProductForm";
 import HomePage from "./HomePage";
 import UserPage from "./UserPage";
 import Nav from "./Nav";
@@ -70,7 +70,7 @@ const Main = function() {
                 },
                 {
                     routeName: "add-product",
-                    Component: AddProduct,
+                    Component: ProductForm,
                     props: {addProduct, setRouteName}
                 }
             ]}

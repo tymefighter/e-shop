@@ -3,9 +3,9 @@ import Card from "./Card";
 
 import { DEFAULT_PRODUCT_IMAGE } from "./constants";
 
-import "./styles/AddProduct.scss";
+import "./styles/ProductForm.scss";
 
-export interface AddProductPropsType {
+export interface ProductFormPropsType {
     addProduct: (productInfo: {
         name: string;
         price: string;
@@ -15,7 +15,7 @@ export interface AddProductPropsType {
     setRouteName: (routeName: string) => void;
 };
 
-const AddProduct = function({addProduct, setRouteName}: AddProductPropsType) {
+const ProductForm = function({addProduct, setRouteName}: ProductFormPropsType) {
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
@@ -85,4 +85,4 @@ const AddProduct = function({addProduct, setRouteName}: AddProductPropsType) {
     );
 };
 
-export default AddProduct;
+export default ProductForm;
