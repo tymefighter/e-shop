@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import Card from "./Card";
 
 import { DEFAULT_PRODUCT_IMAGE } from "./constants";
+import { ProductType } from "./ProductType";
 
 import "./styles/ProductForm.scss";
 
 export interface ProductFormPropsType {
-    addProduct: (productInfo: {
-        name: string;
-        price: string;
-        imagePath: string;
-        description: string;
-    }) => void;
+    addProduct: (productInfo: ProductType) => void;
     setRouteName: (routeName: string) => void;
 };
 

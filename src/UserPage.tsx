@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import SearchBar, { PriceOrder } from "./SearchBar";
 import UserProductGrid from "./UserProductGrid";
 
+import { ProductListType } from "./ProductType";
+
 export interface UserPagePropsType {
-    productList: {
-        name: string;
-        price: string;
-        description: string;
-        imagePath: string;
-        id: string;
-    }[];
+    productList: ProductListType;
 };
 
 const UserPage = function({productList}: UserPagePropsType) {

@@ -4,17 +4,9 @@ const vaderSocksUrl = require("./assets/images/vader-socks.jpeg");
 const eyeOfAgamottoUrl = require("./assets/images/eye-of-agamotto.jpeg");
 const lightSaberUrl = require("./assets/images/lightsaber.jpg");
 
-interface DataType {
-    id: string;
-    name: string;
-    price: string;
-    imagePath: string;
-    description: string;
-};
+import { ProductListType } from "./ProductType";
 
-type DataList = DataType[];
-
-export const data: DataList = [
+export const data: ProductListType = [
     {
         id: "1",
         name: "Amazing T-Shirt",
