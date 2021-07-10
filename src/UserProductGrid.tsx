@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import Card from "./Card";
 import UserSelectModal from "./UserSelectModal";
 
+import { ProductListType } from "./ProductType";
+
 import "./styles/ProductGrid.scss";
 
 interface UserProductGridPropsType {
-    productList: {
-        name: string
-        price: string;
-        description: string;
-        imagePath: string;
-        id: string;
-    }[];
+    productList: ProductListType;
 };
 
 const UserProductGrid = function({productList}: UserProductGridPropsType) {

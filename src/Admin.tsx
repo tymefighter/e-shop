@@ -1,16 +1,12 @@
 import React from "react";
 import AdminProductGrid from "./AdminProductGrid";
 
+import { ProductListType } from "./ProductType";
+
 import "./styles/Admin.scss";
 
 export interface AdminPropsType {
-    productList: {
-        name: string;
-        price: string;
-        description: string;
-        imagePath: string;
-        id: string;
-    }[];
+    productList: ProductListType;
     deleteProduct: (id: string) => void;
     setRouteName: (routeName: string) => void;
 };

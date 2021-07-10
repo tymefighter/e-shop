@@ -2,25 +2,16 @@ import React, { useState } from "react";
 import Card from "./Card";
 import AdminSelectModal from "./AdminSelectModal";
 
+import { ProductTypeWithId, ProductListType } from "./ProductType";
+
 import "./styles/ProductGrid.scss";
 
 export interface AdminProductGridPropsType {
-    productList: {
-        name: string;
-        price: string;
-        description: string;
-        imagePath: string;
-        id: string;
-    }[];
+    productList: ProductListType;
     deleteProduct: (productId: string) => void;
 };
 
-interface ModalInfoType {
-    name: string;
-    price: string;
-    description: string;
-    imagePath: string;
-    id: string;
+export interface ModalInfoType extends ProductTypeWithId {
     show: boolean;
 };
 

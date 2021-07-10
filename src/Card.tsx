@@ -1,13 +1,10 @@
 import React from "react";
 import "./styles/Card.scss";
 
-export interface CardType {
-    [key: string]: any;
+import { ProductType } from "./ProductType";
 
-    name: string;
-    price: string;
-    description: string;
-    imagePath: string;
+export interface CardType extends ProductType  {
+    [key: string]: any;
     className?: string;
 };
 
